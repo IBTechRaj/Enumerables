@@ -1,13 +1,13 @@
 module Enumerable
   def my_each
-    each do |element|
+   for element in self
       yield element
     end
-    end
+  end
 
   def my_each_with_index
     i = 0
-    each do |element|
+    for element in self
       yield element, i
       i += 1
     end
@@ -15,7 +15,7 @@ module Enumerable
 
   def my_select
     array = []
-    each do |element|
+    for element in self
       array << element if yield element
     end
     array
@@ -53,7 +53,7 @@ module Enumerable
 
     def my_count(item = nil)
     count = 0
-    each do |i|
+    for i in self
       if !item.nil?
         count += 1 if i == item
       elsif block_given?
@@ -72,7 +72,7 @@ module Enumerable
       start = 1
     end
 
-    (start...size).each do |i|
+    for i in (start...self.size)
       init = yield(init, self[i])
     end
     init
