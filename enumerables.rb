@@ -6,10 +6,8 @@ module Enumerable
   end
 
   def my_each_with_index
-    i = 0
-    for element in self
-      yield element, i
-      i += 1
+    for i in (0..self.size)
+      yield self[i], i
     end
   end
 
