@@ -19,7 +19,7 @@ module Enumerable
     array
   end
 
-   def my_all?
+  def my_all?
     return true unless block_given?
 
     if self.class == Hash
@@ -47,9 +47,9 @@ module Enumerable
     else
       !my_any?(pattern)
     end
-   end
+  end
 
-    def my_count(item = nil)
+  def my_count(item = nil)
     count = 0
     for i in self
       if !item.nil?
@@ -61,7 +61,7 @@ module Enumerable
       end
     end
     count
-    end
+  end
 
   def my_inject(init = nil)
     start = 0
@@ -76,7 +76,7 @@ module Enumerable
     init
   end
 
-    def my_map
+  def my_map
     return to_enum(:my_map) unless block_given?
 
     mapped_array = []
